@@ -4,6 +4,7 @@ import pyautogui
 import pyttsx3
 import requests
 import speech_recognition 
+import keyboard
 engine = pyttsx3.init("sapi5")
 voices = engine.getProperty("voices")
 engine.setProperty("voice", voices[0].id)
