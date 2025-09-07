@@ -1,23 +1,23 @@
-from jarvis_main import speak, takeCommand
+import pyttsx3
+import datetime
 
+engine = pyttsx3.init("sapi5")
+voices = engine.getProperty("voices")
+engine.setProperty("voice", voices[0].id)
+engine.setProperty("rate",200)
 
-if __name__ == "__main__":
-    while True:
-        query = takeCommand().lower()
-        if "wake up" in query:
-            from GreetMe import greetMe
-            greetMe()
+def speak(audio):
+    engine.say(audio)
+    engine.runAndWait()
 
-            while True:
-                query = takeCommand().lower()
-                if "go to sleep" in query:
-                    speak("Ok sir , You can me call anytime")
-                    break 
-                elif "hello" in query:
-                    speak("Hello sir, how are you ?")
-                elif "i am fine" in query:
-                    speak("that's great, sir")
-                elif "how are you" in query:
-                    speak("Perfect, sir")
-                elif "thank you" in query:
-                    speak("you are welcome, sir")
+def greetMe():
+    hour  = int(datetime.datetime.now().hour)
+    if hour>=0 and hour<=12:
+        speak("Good Morning,sir")
+    elif hour >12 and hour<=18:
+        speak("Good Afternoon ,sir")
+
+    else:
+        speak("Good Evening,sir")
+
+    speak("Please tell me, How can I help you ?")
