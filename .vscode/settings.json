@@ -2,6 +2,8 @@
   "cSpell.words": [
     "Alarmtext",
     "Alarmtime",
+    "apikey",
+    "Calculatenumbers",
     "choosen",
     "closeappweb",
     "commandprompt",
@@ -21,6 +23,7 @@
     "timenow",
     "timeset",
     "volumedown",
-    "volumeup"
+    "volumeup",
+    "wolframalpha"
   ]
 }

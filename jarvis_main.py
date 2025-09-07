@@ -94,6 +94,17 @@ if __name__ == "__main__":
                 elif "wikipedia" in query:
                          from SearchNow import searchWikipedia
                          searchWikipedia(query)
+
+                elif "news" in query:
+                     from NewsRead import latestnews
+                     latestnews()
+
+                elif "calculate" in query:
+                     from Calculatenumbers import WolfRamAlpha
+                     from Calculatenumbers import Calc
+                     query = query.replace("calculate","")
+                     query = query.replace("jarvis","")
+                     Calc(query)
                 elif "temperature" in query:
                   search = "temperature in delhi"
                   url = f"https://www.google.com/search?q={search}"
