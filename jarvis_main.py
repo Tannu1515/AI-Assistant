@@ -1,4 +1,6 @@
 import datetime
+import random
+import webbrowser
 from bs4 import BeautifulSoup
 import pyautogui
 import pyttsx3
@@ -50,6 +52,12 @@ if __name__ == "__main__":
                     speak("Perfect, sir")
                 elif "thank you" in query:
                     speak("you are welcome, sir")
+                elif "tired" in query:
+                   speak("Playing your favourite songs, sir")
+                   a = (1,2,3) # You can choose any number of songs (I have only choosen 3)
+                   b = random.choice(a)
+                   if b==1:
+                     webbrowser.open ("https://www.youtube.com/watch?v=f23fulFeQYw&list=PLwvlULXNCT9i4WeclD9h9wjL4j7ogVOfl")
 
                 elif "pause" in query:
                    pyautogui.press("k")
