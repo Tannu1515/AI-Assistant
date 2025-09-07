@@ -1,4 +1,7 @@
+import datetime
+from bs4 import BeautifulSoup
 import pyttsx3
+import requests
 import speech_recognition 
 engine = pyttsx3.init("sapi5")
 voices = engine.getProperty("voices")
@@ -45,7 +48,14 @@ if __name__ == "__main__":
                     speak("Perfect, sir")
                 elif "thank you" in query:
                     speak("you are welcome, sir")
-                elif "google" in query:
+                elif "open" in query:
+                    from Dictapp import openappweb
+                    openappweb(query)
+                elif "close" in query:
+                    from Dictapp import closeappweb
+                    closeappweb(query)
+
+                
                 elif "google" in query:
                       from SearchNow import searchGoogle
                       searchGoogle(query)
@@ -55,3 +65,23 @@ if __name__ == "__main__":
                 elif "wikipedia" in query:
                          from SearchNow import searchWikipedia
                          searchWikipedia(query)
+                elif "temperature" in query:
+                  search = "temperature in delhi"
+                  url = f"https://www.google.com/search?q={search}"
+                  r  = requests.get(url)
+                  data = BeautifulSoup(r.text,"html.parser")
+                  temp = data.find("div", class_ = "BNeawe").text
+                  speak(f"current{search} is {temp}")
+                elif "weather" in query:
+                    search = "temperature in delhi"
+                    url = f"https://www.google.com/search?q={search}"
+                    r  = requests.get(url)
+                    data = BeautifulSoup(r.text,"html.parser")
+                    temp = data.find("div", class_ = "BNeawe").text
+                    speak(f"current{search} is {temp}")
+                elif "the time" in query:
+                  strTime = datetime.datetime.now().strftime("%H:%M")    
+                  speak(f"Sir, the time is {strTime}")
+                elif "finally sleep" in query:
+                 speak("Going to sleep,sir")
+                 exit()
