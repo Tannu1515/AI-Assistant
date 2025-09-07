@@ -1,6 +1,0 @@
-name=input("enter the name of student")
-fathername=input("enter father name")
-age=int(input("enter age"))
-print(name)
-print(age)
-print(fathername)

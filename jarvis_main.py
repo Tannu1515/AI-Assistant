@@ -1,5 +1,6 @@
 import datetime
 from bs4 import BeautifulSoup
+import pyautogui
 import pyttsx3
 import requests
 import speech_recognition 
@@ -48,6 +49,25 @@ if __name__ == "__main__":
                     speak("Perfect, sir")
                 elif "thank you" in query:
                     speak("you are welcome, sir")
+
+                elif "pause" in query:
+                   pyautogui.press("k")
+                   speak("video paused")
+                elif "play" in query:
+                   pyautogui.press("k")
+                   speak("video played")
+                elif "mute" in query:
+                   pyautogui.press("m")
+                   speak("video muted")
+
+                elif "volume up" in query:
+                 from keyboard import volumeup
+                 speak("Turning volume up,sir")
+                 volumeup()
+                elif "volume down" in query:
+                   from keyboard import volumedown
+                   speak("Turning volume down, sir")
+                   volumedown()
                 elif "open" in query:
                     from Dictapp import openappweb
                     openappweb(query)

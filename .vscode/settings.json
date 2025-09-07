@@ -1,11 +1,22 @@
 {
   "cSpell.words": [
+    "Alarmtext",
+    "Alarmtime",
     "closeappweb",
     "commandprompt",
+    "currenttime",
+    "deletetime",
     "Dictapp",
+    "extractedtime",
     "Neawe",
     "openappweb",
     "pyautogui",
-    "pyttsx"
+    "pyttsx",
+    "startfile",
+    "timehere",
+    "timenow",
+    "timeset",
+    "volumedown",
+    "volumeup"
   ]
 }
